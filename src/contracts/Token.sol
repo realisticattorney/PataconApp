@@ -31,3 +31,11 @@ contract Token is ERC20 { //Token extends ERC20
 		_mint(account, amount);
 	}
 }
+
+
+
+// MINTED SOME PATACONS using mint function from the truffle console
+//token.mint(acc[0], web3.utils.toWei('100'))
+//tokenBalance = await token.balanceOf(acc[0])
+//tokenBalance.toString() >> '100000000000000000000' (100eth)
+//web3.utils.fromWei(tokenBalance) >> '100'
