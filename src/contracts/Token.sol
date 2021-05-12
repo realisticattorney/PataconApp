@@ -10,7 +10,7 @@ contract Token is ERC20 { //Token extends ERC20
  event MinterChanged(address indexed from, address to);
  //this is to log the event change of transferring who the minter is, 
   //you can config events to be notification on your phone or something like that
-  constructor() public payable ERC20("Patacon", "MNM") {//it has to be public to be deployed/ payable because mm, and ERC20 to use the ERC20 parent
+  constructor() payable ERC20("Patacon", "MNM") {//it has to be public to be deployed/ payable because mm, and ERC20 to use the ERC20 parent
     minter = msg.sender;  //whenever we deploy it we want to set this minter as the sender of msg. msg is a global var inside of solidity
   }
 
