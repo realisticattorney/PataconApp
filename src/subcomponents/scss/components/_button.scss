@@ -1,0 +1,31 @@
+.btn {
+  /* as it's an anchor tag, we use this seudo selector */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    /* inline to add padding to text */
+    display: inline-block;
+    border-radius: 10rem;
+    /* transition animates the hover and active states with a smooth .2s duration */
+    transition: all 0.2s;
+    font-size: 1.6rem;
+  }
+
+  &--white {
+    background-color: #47AFD3;
+    color: #eee;;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* X Y BLUR of shadow */
+    box-shadow: 0 0.5rem 3rem #10464971;
+  }
+  /* when it's clicked */
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.1rem 1rem #10464971;
+  }
+}

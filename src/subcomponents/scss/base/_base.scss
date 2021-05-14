@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* ROOT SIZE OF FONTS (WHICH IS THE VALUE REM UNIT TAKES IS IN THE HTML */
+html {
+  font-size: 62.5%;
+  /* now 1 rem = 10px */
+}
+
+/* FONT SIZE GOES HERE TO BE INHERITED BY ALL TAGS BUT NOT FORCEFUL LIKE UNIVERSAL TAG */
+body {
+  box-sizing: border-box; /* a type of box where margins and padding are not added. */
+  max-width: 140rem;
+  margin: 0 auto;
+  background: linear-gradient(0.25turn, #3f87a6, #7894C8,#9C93CA, #B590CC);
+
+background: rgb(79,98,148);
+background: linear-gradient(240deg, rgba(79,98,148,1) 0%, rgba(100,130,183,1) 38%, rgba(137,151,203,1) 56%, rgba(158,131,198,1) 67%, rgba(177,139,202,1) 100%);
+}

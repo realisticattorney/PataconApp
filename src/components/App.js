@@ -5,6 +5,7 @@ import Token from "../abis/Token.json";
 import Web3 from "web3";
 import "./App.css";
 import Header from "../subcomponents/Header"
+import "../subcomponents/scss/style.scss";
 
 
 class App extends Component {

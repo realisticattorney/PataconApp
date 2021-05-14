@@ -1,11 +1,13 @@
 import React from 'react'
-import './style/nav.scss'
+import './scss/style.scss'
+import img from  "./scss/img/logo-white.png";
 
 const Nav = () => {
   return (
     <nav class="nav">
     <div class="nav__logo-box">
-        <img src="img/logo-white.png" alt="logo" class="logo"/></div>
+        <img src={img} alt="logo" class="logo"/>
+        </div>
         
         <div class="nav__navbar">
             <li class="navlink"><a href="#">Home</a></li>

@@ -1,0 +1,22 @@
+.header {
+  height: 70vh; /* 95% of viewport height */
+  background-image: linear-gradient(
+      to right bottom,
+      #8254d6ca,
+      rgba($primary-color, 0.8)
+    ),
+    url(../img/EwOzSllWUAc97a8.jpeg);
+  /* !!! SUPER EASE LINEAR GRADIENT */
+  background-size: cover; /* cover tries to fit the element inside the box */
+  background-position: left;
+  /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
+  clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 90%);
+  position: relative;
+  /* this is set to relative so the children (logo-box) can have absolute position and set manually by top left right bottom params */
+  &__text-box {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

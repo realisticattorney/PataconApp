@@ -1,0 +1,31 @@
+.nav {
+  width: 90%;
+  margin: 0 auto;
+  &__logo-box {
+    position: absolute;
+    /* top & left starts counting from the parent element's position */
+    top: 3rem;
+    left: 7rem;
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.navlink {
+  display: inline-block;
+  padding: 0 4rem;
+}
+
+.navlink a {
+color: #ccc;
+text-decoration: none;
+font-size: 1.5em;
+}
+
+.logo {
+  height: 3.5rem;
+  /* WE JUST SPECIFY THE HEIGHT AS THE WIDTH WILL SET ACCORDINGLY */
+}

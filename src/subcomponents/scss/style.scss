@@ -1,0 +1,50 @@
+@import "abstracts/variables";
+@import "base/base";
+@import "base/animation";
+@import "base/utilities";
+@import "base/typography";
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "components/button";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/main";
+@import "pages/home";
+
+// @media only screen and (max-width: 500px) {
+
+//   html{
+//     font-size: 41.8%;
+//   }
+// }
+.container {
+  width: 100%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-rows: 20rem 20rem;
+  grid-template-columns: 1fr 40vw 30vw 1fr;
+  gap: 2rem 3vw;
+}
+.item {
+  padding: 2rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 100px;
+
+  &--1 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  &--2 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  &--3 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
