@@ -2,9 +2,10 @@ import { Tabs, Tab } from "react-bootstrap";
 import dBank from "../abis/dBank.json";
 import React, { Component } from "react";
 import Token from "../abis/Token.json";
-import dbank from "../dbank.png";
 import Web3 from "web3";
 import "./App.css";
+import Header from "../subcomponents/Header"
+
 
 class App extends Component {
   async componentWillMount() {
@@ -22,7 +23,8 @@ class App extends Component {
         const balance = await web3.eth.getBalance(accounts[0]);
         this.setState({ account: accounts[0], balance: balance, web3: web3 });
       } else {
-        window.alert("Please login with MetaMask");
+        //window.alert("Please login with MetaMask");
+        console.log("Please login with Metamask");
       }
 
       //load contracts
@@ -43,7 +45,8 @@ class App extends Component {
         });
       } catch (e) {
         console.log("Error", e);
-        window.alert("Contracts not deployed to the current network");
+        //window.alert("Contracts not deployed to the current network");
+        console.log("Contracts not deployed to the current network");
       }
     } else {
       window.alert("Please install MetaMask");
@@ -122,16 +125,9 @@ class App extends Component {
   render() {
     return (
       <div className="text-monospace">
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={dbank} className="App-logo" alt="logo" height="32" />
-            <b>d₿ank</b>
-          </a>
-        </nav>
+        <div>
+          <Header/>
+        </div>
         <div className="container-fluid mt-5 text-center">
           <br></br>
           <h1>Welcome to d₿ank</h1>

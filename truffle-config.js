@@ -1,59 +1,25 @@
-require('babel-register');
-require('babel-polyfill');
-require('dotenv').config();
-const HDWalletProvider = require('truffle-hdwallet-provider-privkey');
-const privateKeys = process.env.PRIVATE_KEYS || ""
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const { projectId, mnemonic } = require("./secrets.json");
 
 module.exports = {
   networks: {
     development: {
-      host: "127.0.0.1",
-      port: 7545,
-      network_id: "*", // Match any network id
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 8545, // Standard Ethereum port (default: none)
+      network_id: "*", // Any network (default: none)
     },
-    kovan: {
-      provider: function () {
-        return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
-          `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
-        );
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 42,
-    },
-    main: {
-      provider: function () {
-        return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
-          `https://main.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
-        );
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 1,
-    },
-    rinkeby: {
-      provider: function () {
-        return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
-          `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
-        );
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 4,
-    },
+    // Useful for deploying to a public network.
+    // NB: It's important to wrap the provider as a function.
     ropsten: {
-      provider: function () {
-        return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
-          `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
-        );
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 3,
+      provider: () =>
+        new HDWalletProvider(
+          mnemonic,
+          `https://ropsten.infura.io/v3/${projectId}`
+        ),
+      network_id: 3, // Ropsten's id
+      gas: 2500000, // Ropsten has a lower block limit than mainnet
+      confirmations: 2, // # of confs to wait between deployments. (default: 0)
+      skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
     },
   },
   contracts_directory: "./src/contracts/",
