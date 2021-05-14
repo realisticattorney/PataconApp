@@ -3,12 +3,12 @@ import dBank from "../abis/dBank.json";
 import React, { Component } from "react";
 import Token from "../abis/Token.json";
 import Web3 from "web3";
-import "./App.css";
 import Header from "../subcomponents/Header"
 import "../subcomponents/scss/style.scss";
-
+// import "bootstrap/dist/css/bootstrap.css";
 
 class App extends Component {
+  
   async componentWillMount() {
     await this.loadBlockchainData(this.props.dispatch);
   }
@@ -122,6 +122,7 @@ class App extends Component {
       dBankAddress: null,
     };
   }
+  
 
   render() {
     return (
@@ -133,6 +134,7 @@ class App extends Component {
           <br></br>
           <h1>Welcome to d₿ank</h1>
           <h2>{this.state.account}</h2>
+          <br/>
           <br></br>
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">

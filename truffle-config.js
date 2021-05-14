@@ -17,7 +17,7 @@ module.exports = {
           `https://ropsten.infura.io/v3/${projectId}`
         ),
       network_id: 3, // Ropsten's id
-      gas: 2500000, // Ropsten has a lower block limit than mainnet
+      gas: 4000000, // Ropsten has a lower block limit than mainnet
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
       skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
     },
