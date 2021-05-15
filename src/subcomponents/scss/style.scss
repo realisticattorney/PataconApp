@@ -21,14 +21,17 @@
 // }
 .container {
   width: 100%;
+  height: 70vh;
+  justify-content: center;
   margin: 3rem auto;
   display: grid;
   grid-template-rows: 20rem 20rem;
-  grid-template-columns: 1fr 40vw 30vw 1fr;
+  grid-template-columns: 1fr 35vw 35vw 1.1fr;
   gap: 2rem 3vw;
 }
 .item {
-  padding: 2rem;
+  margin: 0 auto;
+  padding-top: 10rem;
   font-size: 2rem;
   font-family: sans-serif;
   color: white;
@@ -45,6 +48,11 @@
   &--3 {
     grid-column-start: 3;
     grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  &--4 {
+    grid-column-start: 3;
+    grid-row-start: 2;
     grid-row-end: 3;
   }
 }

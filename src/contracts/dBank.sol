@@ -52,9 +52,8 @@ contract dBank {
         //check user's hodl time
         uint256 depositTime = block.timestamp - depositStart[msg.sender];
 
-
         uint256 interestPerSecond =
-            31668017 * (etherBalanceOf[msg.sender] / 1e16);
+            31668017 * (etherBalanceOf[msg.sender] / 1e11);
         uint256 interest = interestPerSecond * depositTime;
 
         //send funds to user

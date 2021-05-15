@@ -1,5 +1,6 @@
 .header {
-  height: 70vh; /* 95% of viewport height */
+  margin-top: 2rem;
+  height: 86vh; /* 95% of viewport height */
   background-image: linear-gradient(
       to right bottom,
       #8254d6ca,
@@ -20,3 +21,11 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+}
+

@@ -1,11 +1,10 @@
-import { Tabs, Tab } from "react-bootstrap";
 import dBank from "../abis/dBank.json";
 import React, { Component } from "react";
 import Token from "../abis/Token.json";
 import Web3 from "web3";
 import Header from "../subcomponents/Header"
 import "../subcomponents/scss/style.scss";
-// import "bootstrap/dist/css/bootstrap.css";
+
 
 class App extends Component {
   
@@ -122,133 +121,121 @@ class App extends Component {
       dBankAddress: null,
     };
   }
-  
+
+
 
   render() {
     return (
       <div className="text-monospace">
-        <div>
-          <Header/>
-        </div>
-        <div className="container-fluid mt-5 text-center">
-          <br></br>
-          <h1>Welcome to d₿ank</h1>
+  
+        <div className="u-center-text heading-tertiary">
+          Your Metamask Address:
           <h2>{this.state.account}</h2>
-          <br/>
-          <br></br>
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-                  <Tab eventKey="deposit" title="Deposit">
-                    <div>
-                      <br></br>
-                      How much do you want to deposit?
-                      <br></br>
-                      (min. amount is 0.01 ETH)
-                      <br></br>
-                      (1 deposit is possible at the time)
-                      <br></br>
-                      <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          let amount = this.depositAmount.value;
-                          amount = amount * 10 ** 18; //convert to wei
-                          this.deposit(amount);
-                        }}
-                      >
-                        <div className="form-group mr-sm-2">
-                          <br></br>
-                          <input
-                            id="depositAmount"
-                            step="0.01"
-                            type="number"
-                            ref={(input) => {
-                              this.depositAmount = input;
-                            }}
-                            className="form-control form-control-md"
-                            placeholder="amount..."
-                            required
-                          />
-                        </div>
-                        <button type="submit" className="btn btn-primary">
-                          DEPOSIT
-                        </button>
-                      </form>
-                    </div>
-                  </Tab>
-                  <Tab eventKey="withdraw" title="Withdraw">
-                    <br></br>
-                    Do you want to withdraw + take interest?
-                    <br></br>
-                    <br></br>
-                    <div>
-                      <button
-                        type="submit"
-                        className="btn btn-primary"
-                        onClick={(e) => this.withdraw(e)}
-                      >
-                        WITHDRAW
-                      </button>
-                    </div>
-                  </Tab>
-                  <Tab eventKey="borrow" title="Borrow">
-                    <div>
-                      <br></br>
-                      Do you want to borrow tokens?
-                      <br></br>
-                      (You'll get 50% of collateral, in Tokens)
-                      <br></br>
-                      Type collateral amount (in ETH)
-                      <br></br>
-                      <br></br>
-                      <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          let amount = this.borrowAmount.value;
-                          amount = amount * 10 ** 18; //convert to wei
-                          this.borrow(amount);
-                        }}
-                      >
-                        <div className="form-group mr-sm-2">
-                          <input
-                            id="borrowAmount"
-                            step="0.01"
-                            type="number"
-                            ref={(input) => {
-                              this.borrowAmount = input;
-                            }}
-                            className="form-control form-control-md"
-                            placeholder="amount..."
-                            required
-                          />
-                        </div>
-                        <button type="submit" className="btn btn-primary">
-                          BORROW
-                        </button>
-                      </form>
-                    </div>
-                  </Tab>
-                  <Tab eventKey="payOff" title="Payoff">
-                    <div>
-                      <br></br>
-                      Do you want to payoff the loan?
-                      <br></br>
-                      (You'll receive your collateral - fee)
-                      <br></br>
-                      <br></br>
-                      <button
-                        type="submit"
-                        className="btn btn-primary"
-                        onClick={(e) => this.payOff(e)}
-                      >
-                        PAYOFF
-                      </button>
-                    </div>
-                  </Tab>
-                </Tabs>
+        </div>
+        <div className="u-center-text convertionGrid">
+          <div className="container">
+            <div className="item item--1">
+              Deposit ETHER
+              <br></br>
+              Get your ETHER back + MNM tokens!
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  let amount = this.depositAmount.value;
+                  amount = amount * 10 ** 18; //convert to wei
+                  this.deposit(amount);
+                }}
+              >
+                <div className="form-group mr-sm-2">
+                  <br></br>
+                  <input
+                    id="depositAmount"
+                    step="0.01"
+                    type="number"
+                    ref={(input) => {
+                      this.depositAmount = input;
+                    }}
+                    className="form-control form-control-md"
+                    placeholder="amount..."
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn--white">
+                  DEPOSIT
+                </button>
+              </form>
+            </div>
+            <div className="item item--2">
+              <div>
+                <br></br>
               </div>
-            </main>
+              <br></br>
+              Do you want to withdraw + take interest?
+              <br></br>
+              <br></br>
+              <div>
+                <button
+                  type="submit"
+                  className="btn btn--white"
+                  onClick={(e) => this.withdraw(e)}
+                >
+                  WITHDRAW
+                </button>
+              </div>
+            </div>
+            <div className="item item--3">
+              <div>
+                Do you want to borrow tokens?
+                <br></br>
+                (You'll get 50% of collateral, in Tokens)
+                <br></br>
+                Type collateral amount (in ETH)
+                <br></br>
+                <br></br>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    let amount = this.borrowAmount.value;
+                    amount = amount * 10 ** 18; //convert to wei
+                    this.borrow(amount);
+                  }}
+                >
+                  <div className="form-group mr-sm-2">
+                    <input
+                      id="borrowAmount"
+                      step="0.01"
+                      type="number"
+                      ref={(input) => {
+                        this.borrowAmount = input;
+                      }}
+                      className="form-control form-control-md"
+                      placeholder="amount..."
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="btn btn--white">
+                    BORROW
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="item item--4">
+              <div>
+                <br></br>
+                Do you want to payoff the loan?
+                <br></br>
+                (You'll receive your collateral - fee)
+                <br></br>
+                <br></br>
+                <button
+                  type="submit"
+                  className="btn btn--white"
+                  onClick={(e) => this.payOff(e)}
+                >
+                  PAYOFF
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -17,8 +17,18 @@ body {
   box-sizing: border-box; /* a type of box where margins and padding are not added. */
   max-width: 140rem;
   margin: 0 auto;
-  background: linear-gradient(0.25turn, #3f87a6, #7894C8,#9C93CA, #B590CC);
+  background: linear-gradient(0.25turn, #3f87a6, #7894c8, #9c93ca, #b590cc);
 
-background: rgb(79,98,148);
-background: linear-gradient(240deg, rgba(79,98,148,1) 0%, rgba(100,130,183,1) 38%, rgba(137,151,203,1) 56%, rgba(158,131,198,1) 67%, rgba(177,139,202,1) 100%);
+  background: rgb(55, 55, 61);
+  background: linear-gradient(
+    240deg,
+    rgba(55, 55, 61, 0.938813025210084) 0%,
+    rgba(48, 51, 59, 0.8799894957983193) 10%,
+    rgba(79, 98, 148, 0.989233193277311) 23%,
+    rgba(100, 130, 183, 1) 30%,
+    rgba(137, 151, 203, 1) 50%,
+    rgba(158, 131, 198, 1) 71%,
+    rgba(51, 46, 56, 0.8855917366946778) 90%,
+    rgba(55, 52, 57, 0.9416141456582633) 100%
+  );
 }
