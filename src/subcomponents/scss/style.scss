@@ -13,46 +13,155 @@
 @import "layout/main";
 @import "pages/home";
 
-// @media only screen and (max-width: 500px) {
+.switch-wrapper {
+  position: relative;
+}
 
-//   html{
-//     font-size: 41.8%;
-//   }
-// }
+.switch-wrapper > div {
+  position: absolute;
+}
+
 .container {
-  width: 100%;
-  height: 70vh;
+  width: 70.5vw;
+  height: 72.5vh;
   justify-content: center;
-  margin: 3rem auto;
+  align-content: center;
+  margin: 0rem auto;
   display: grid;
-  grid-template-rows: 20rem 20rem;
-  grid-template-columns: 1fr 35vw 35vw 1.1fr;
-  gap: 2rem 3vw;
+  grid-template-rows: 35vh 35vh;
+  grid-template-columns: 35vw 35vw;
+  gap: 1vh 0.5vw;
+  place-items: center;
+  background: linear-gradient(#161522, #161522) padding-box,
+    /*this is your grey background*/
+      linear-gradient(12deg, #1fd1f9 0%, #b621fe 74%) border-box;
+  // color: #313149;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
 }
 .item {
+  justify-self: center;
+  align-self: center;
+  height: 34vh;
+  width: 34vw;
   margin: 0 auto;
-  padding-top: 10rem;
+  padding-top: 7vh;
+  background: #202231;
   font-size: 2rem;
   font-family: sans-serif;
   color: white;
-  border-radius: 100px;
+  border-radius: 1.5rem;
 
   &--1 {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-row-start: 1;
   }
   &--2 {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-row-start: 2;
   }
   &--3 {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   &--4 {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+  }
+}
+
+.app-div {
+  margin-top: 5rem;
+}
+
+@mixin epic-sides() {
+  // https://codepen.io/MichaelArestad/pen/qltuk
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    // position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    // left: -5000px;
+    // height: 100%;
+    // width: 1500px;
+    z-index: -1;
+    @content;
+  }
+}
+.row {
+  max-width: 35vh;
+  margin: 0 auto;
+  padding: 2px 30px;
+  background: #032429;
+  @include epic-sides() {
+    background: inherit;
+  }
+  text-align: center;
+
+  &:first-child {
+    padding: 4px 3px;
+  }
+  &:nth-child(2) {
+    background: #134a46;
+  }
+  .basic-slide {
+    display: inline-block;
+    width: 215px;
+    padding: 10px 0 10px 15px;
+    font-family: "Open Sans", sans;
+    font-weight: 400;
+    color: #377d6a;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    text-indent: 30px; // Arbitrary.
+    transition: all 0.3s ease-in-out;
+
+    &::-webkit-input-placeholder {
+      color: #efefef;
+      text-indent: 0;
+      font-weight: 300;
+    }
+
+    + label {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 2px 15px;
+      text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+      background: #418489;
+      transition: all 0.3s ease-in-out;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    margin: 3px 10px;
+  }
+}
+.basic-slide:focus,
+.basic-slide:active {
+  color: #377d6a;
+  text-indent: 0;
+  background: #fff;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  &::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  + label {
+    transform: translateX(-100%);
   }
 }
