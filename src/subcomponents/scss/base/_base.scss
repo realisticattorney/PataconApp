@@ -35,3 +35,14 @@ background: linear-gradient(256deg, rgba(4,4,28,0.938813025210084) 0%, rgba(48,5
 }
 
 
+@media only screen and (max-width: 552px) {
+  html {
+  font-size: 54.5%;
+  /* now 1 rem = 10px */
+}
+.nav__navbar{
+  display: none;
+}
+
+}
+
