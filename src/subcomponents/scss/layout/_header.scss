@@ -42,9 +42,9 @@
     /* this is set to relative so the children (logo-box) can have absolute position and set manually by top left right bottom params */
     &__text-box {
       text-align: center;
-      width: 73%;
+      width: 85%;
       position: absolute;
-      top: 40%;
+      top: 38%;
       left: 45%;
       transform: translate(-40%, -50%);
       text-shadow: 7px 3px 9px rgba(0, 0, 0, 0.36);
@@ -55,7 +55,7 @@
 @media only screen and (max-width: 428px) {
   .header {
     margin-top: 3rem;
-    height: 86vh; /* 95% of viewport height */
+    height: 80rem; /* 95% of viewport height */
 
     background-position: left;
     /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
@@ -64,9 +64,9 @@
     /* this is set to relative so the children (logo-box) can have absolute position and set manually by top left right bottom params */
     &__text-box {
       text-align: center;
-      width: 79%;
+      width: 85%;
       position: absolute;
-      top: 40%;
+      top: 38%;
       left: 43%;
       transform: translate(-40%, -50%);
       text-shadow: 7px 3px 9px rgba(0, 0, 0, 0.36);

@@ -70,9 +70,9 @@ body {
 
     &--main {
       display: block;
-      font-size: 5rem;
+      font-size: 4.8rem;
       font-weight: 400;
-      letter-spacing: 3rem;
+      letter-spacing: 2.8rem;
       animation: moveInLeft 1s ease-in-out;
       animation-delay: 0.15s;
       /* animation-iteration-count: 3; */
@@ -80,11 +80,11 @@ body {
     &--sub {
       display: block;
       font-size: 3.7rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 1.7rem;
       animation: moveInRight 1s ease-in-out;
       animation-delay: 0.15s;
-      padding-bottom: 1rem;
+      padding-bottom: 0.5rem;
     }
   }
 }
