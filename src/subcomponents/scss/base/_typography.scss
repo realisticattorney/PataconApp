@@ -47,35 +47,44 @@ body {
   font-weight: 500;
 }
 
-.paragraph{
+.paragraph {
   font-size: 1.6rem;
 }
 
-
-@media only screen and (max-width: 428px) {
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-
-  &--main {
-    display: block;
-    font-size: 5rem;
-    font-weight: 400;
-    letter-spacing: 3rem;
-    animation: moveInLeft 1s ease-in-out;
-    animation-delay: 0.15s;
-    /* animation-iteration-count: 3; */
-  }
-  &--sub {
-    display: block;
-    font-size: 3.7rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
-    animation: moveInRight 1s ease-in-out;
-    animation-delay: 0.15s;
-    padding-bottom: 1rem;
+@media only screen and (max-width: 552px) {
+  .heading-tertiary {
+    color: #e2e2e2;
+    font-size: 1em;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
 
+@media only screen and (max-width: 428px) {
+  .heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+
+    &--main {
+      display: block;
+      font-size: 5rem;
+      font-weight: 400;
+      letter-spacing: 3rem;
+      animation: moveInLeft 1s ease-in-out;
+      animation-delay: 0.15s;
+      /* animation-iteration-count: 3; */
+    }
+    &--sub {
+      display: block;
+      font-size: 3.7rem;
+      font-weight: 700;
+      letter-spacing: 1.7rem;
+      animation: moveInRight 1s ease-in-out;
+      animation-delay: 0.15s;
+      padding-bottom: 1rem;
+    }
+  }
 }
