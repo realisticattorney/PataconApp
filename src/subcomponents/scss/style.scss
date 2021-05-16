@@ -481,7 +481,7 @@
     align-content: center;
     margin: 0rem auto;
     display: grid;
-    grid-template-rows: 27vh 18vh 22vh 18vh;
+    grid-template-rows: 27rem 15rem 27rem 15rem;
     grid-template-columns: 64vw;
     gap: 0.7vh;
     place-items: center;
@@ -497,10 +497,10 @@
   .item {
     justify-self: center;
     // align-self: center;
-    width: 60.8vw;
+    width: 59vw;
     // margin: 0 auto;
     padding: 1rem;
-    padding-top: 2vh;
+    padding-top: 1.6rem;
     font-size: 1.8rem;
     font-family: sans-serif;
     color: white;
@@ -508,28 +508,28 @@
 
     &--1 {
       background: linear-gradient(213deg, #0e91fdf6 24%, #053491 104%);
-      height: 27vh;
+      height: 27rem;
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 1;
       grid-row-end: 2;
     }
     &--2 {
-      height: 18vh;
+      height: 15rem;
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 2;
       grid-row-end: 3;
     }
     &--3 {
-      height: 22vh;
+      height: 27rem;
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 3;
       grid-row-end: 4;
     }
     &--4 {
-      height: 18vh;
+      height: 15rem;
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 4;
@@ -553,9 +553,7 @@
     &:first-child {
       padding: 4px 3px;
     }
-    &:nth-child(2) {
-      // background: #77fff6;
-    }
+ 
     .basic-slide {
       display: inline-block;
       margin-left: 85px;
