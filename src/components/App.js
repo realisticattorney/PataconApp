@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import Token from "../abis/Token.json";
 import Web3 from "web3";
 import "../subcomponents/scss/style.scss";
-
+import logo from '../subcomponents/scss/rocket-logo.png'
 
 class App extends Component {
-  
+
   async componentWillMount() {
     await this.loadBlockchainData(this.props.dispatch);
   }
@@ -126,16 +126,14 @@ class App extends Component {
   render() {
     return (
       <div className="app-div">
-        <div className="u-center-text heading-tertiary">
-          Your Metamask Address:
-          <h2>{this.state.account}</h2>
-        </div>
         <div className="u-center-text">
           <div className="container">
             <div className="item item--1">
               Deposit ETHER
               <br></br>
-              Get your ETHER back + MNM tokens!
+              Get your ETHER back + <span class="menem-text">MNM</span>{" "}
+              <img src={logo} alt="" id="laconchadetumadre" />
+              tokens!
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -164,7 +162,6 @@ class App extends Component {
                   <button
                     type="submit"
                     className="custom-btn btn-7 test1 variant-1 "
-                    
                   >
                     <span>DEPOSIT</span>
                   </button>
@@ -173,7 +170,9 @@ class App extends Component {
             </div>
             <div className="item item--2">
               Withdraw ETHER
-              <br></br>+ MNM governance token!
+              <br></br>+<span class="menem-text">MNM</span>{" "}
+              <img src={logo} alt="" id="laconchadetumadre" />
+              governance token!
               <br></br>
               <div class="frame">
                 <button
@@ -242,6 +241,10 @@ class App extends Component {
               </div>
             </div>
           </div>
+        </div>
+        <div className="u-center-text heading-tertiary">
+          Your Metamask Address:
+          <h2>{this.state.account}</h2>
         </div>
       </div>
     );
