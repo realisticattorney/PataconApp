@@ -27,8 +27,8 @@ const Header = () => {
       <header className="header">
         <div className="header__text-box">
           <h1 className="heading-primary">
-            <span className="heading-primary--main">dolar</span>
-            <span className="heading-primary--sub">peso</span>
+            <span className="heading-primary--main">1 eth</span>
+            <span className="heading-primary--sub">= 1 peso</span>
           </h1>
           <div class="frame">
             <button
