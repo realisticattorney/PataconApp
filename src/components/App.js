@@ -3,10 +3,9 @@ import React, { Component } from "react";
 import Token from "../abis/Token.json";
 import Web3 from "web3";
 import "../subcomponents/scss/style.scss";
-import logo from '../subcomponents/scss/rocket-logo.png'
+import logo from "../subcomponents/scss/rocket-logo.png";
 
 class App extends Component {
-
   async componentWillMount() {
     await this.loadBlockchainData(this.props.dispatch);
   }
@@ -121,8 +120,6 @@ class App extends Component {
     };
   }
 
-
-
   render() {
     return (
       <div className="app-div">
@@ -172,7 +169,7 @@ class App extends Component {
               Withdraw ETHER
               <br></br>+<span class="menem-text">MNM</span>{" "}
               <img src={logo} alt="" id="laconchadetumadre" />
-              governance token!
+              tokens!
               <br></br>
               <div class="frame">
                 <button

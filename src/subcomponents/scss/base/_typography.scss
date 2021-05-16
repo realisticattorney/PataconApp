@@ -16,7 +16,7 @@ body {
     display: block;
     font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 3.5rem;
+    letter-spacing: 3.2rem;
     animation: moveInLeft 1s ease-in-out;
     animation-delay: 0.15s;
     /* animation-iteration-count: 3; */
@@ -49,4 +49,33 @@ body {
 
 .paragraph{
   font-size: 1.6rem;
+}
+
+
+@media only screen and (max-width: 428px) {
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+    animation: moveInLeft 1s ease-in-out;
+    animation-delay: 0.15s;
+    /* animation-iteration-count: 3; */
+  }
+  &--sub {
+    display: block;
+    font-size: 3.7rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation: moveInRight 1s ease-in-out;
+    animation-delay: 0.15s;
+    padding-bottom: 1rem;
+  }
+}
+
 }

@@ -34,3 +34,10 @@ font-size: 1.5em;
   // border-radius: 26px;
   /* WE JUST SPECIFY THE HEIGHT AS THE WIDTH WILL SET ACCORDINGLY */
 }
+@media only screen and (max-width: 752px) {
+
+.nav__navbar{
+  display: none;
+}
+
+}
