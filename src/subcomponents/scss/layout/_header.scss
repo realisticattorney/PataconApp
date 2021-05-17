@@ -1,3 +1,8 @@
+.shadoww{
+     filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.5));
+}
+
+
 .header {
   margin-top: 2rem;
   height: 86vh; /* 95% of viewport height */
@@ -9,7 +14,7 @@
     url(../img/EwOzSllWUAc97a8.jpeg);
   /* !!! SUPER EASE LINEAR GRADIENT */
   background-size: cover; /* cover tries to fit the element inside the box */
-  background-position: left;
+  background-position: bottom;
   /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
   clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 82%);
   position: relative;
@@ -34,8 +39,9 @@
   .header {
     margin-top: 3rem;
     height: 86vh; /* 95% of viewport height */
-
-    background-position: left;
+    background-position: top;
+    background-size: auto;
+    // background-position: left;
     /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
     clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 80%);
     position: relative;
@@ -56,8 +62,14 @@
   .header {
     margin-top: 3rem;
     height: 80rem; /* 95% of viewport height */
-
-    background-position: left;
+    background-image: linear-gradient(
+        to right bottom,
+        #8254d6ca,
+        rgba($primary-color, 0.8)
+      ),
+      url(../img/EwOzSllWUAc97a8.jpeg);
+    background-position: top;
+    background-size: auto;
     /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
     clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 80%);
     position: relative;

@@ -52,6 +52,7 @@
   padding-top: 4vh;
   background: #202231;
   font-size: 1.8rem;
+  text-shadow: 0 2px 2px rgba(19, 74, 70, 0.4);
   font-family: sans-serif;
   color: white;
   border-radius: 1.5rem;
@@ -147,7 +148,7 @@
       top: 0;
       left: 10%;
       padding: 2px 15px;
-      text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+      text-shadow: 0 2px 2px rgba(19, 74, 70, 0.4);
       background: #2a3a50;
       transition: all 0.3s ease-in-out;
       border-top-left-radius: 3px;
@@ -285,7 +286,6 @@
         top: 0;
         left: 10%;
         padding: 2px 15px;
-        text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
         background: #2a3a50;
         transition: all 0.3s ease-in-out;
         border-top-left-radius: 3px;
@@ -427,7 +427,6 @@
         top: 0;
         left: 10%;
         padding: 2px 15px;
-        text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
         background: #2a3a50;
         transition: all 0.3s ease-in-out;
         border-top-left-radius: 3px;
@@ -571,7 +570,6 @@
         top: 0;
         left: 10%;
         padding: 2px 15px;
-        text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
         background: #2a3a50;
         transition: all 0.3s ease-in-out;
         border-top-left-radius: 3px;
