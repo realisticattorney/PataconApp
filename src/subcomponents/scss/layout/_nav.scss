@@ -18,14 +18,14 @@
   display: inline-block;
   padding: 0 4rem;
   color: rgb(238, 238, 238);
-text-decoration: none;
-font-size: 1.5em;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .navlink a {
-color: rgb(238, 238, 238);
-text-decoration: none;
-font-size: 1.5em;
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .logo {
@@ -35,18 +35,16 @@ font-size: 1.5em;
   /* WE JUST SPECIFY THE HEIGHT AS THE WIDTH WILL SET ACCORDINGLY */
 }
 @media only screen and (max-width: 752px) {
-
-.nav__navbar{
-  display: none;
-}
-
+  .nav__navbar {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 552px) {
-
-.logo {
-  position: absolute;
-  left: 0px;
-}
-
+  .logo {
+    position: absolute;
+    left: -2.7rem;
+    width: 7rem;
+    height: auto;
+  }
 }
