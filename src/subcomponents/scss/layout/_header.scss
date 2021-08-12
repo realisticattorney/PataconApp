@@ -1,3 +1,8 @@
+.shadoww{
+     filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.5));
+}
+
+
 .header {
   margin-top: 2rem;
   height: 86vh; /* 95% of viewport height */
@@ -9,16 +14,17 @@
     url(../img/EwOzSllWUAc97a8.jpeg);
   /* !!! SUPER EASE LINEAR GRADIENT */
   background-size: cover; /* cover tries to fit the element inside the box */
-  background-position: left;
+  background-position: bottom;
   /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
-  clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 90%);
+  clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 82%);
   position: relative;
   /* this is set to relative so the children (logo-box) can have absolute position and set manually by top left right bottom params */
   &__text-box {
     position: absolute;
-    top: 48%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 7px 3px 9px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -29,3 +35,53 @@
   width: 25px;
 }
 
+@media only screen and (max-width: 752px) {
+  .header {
+    margin-top: 3rem;
+    height: 86vh; /* 95% of viewport height */
+    background-position: top;
+    background-size: auto;
+    // background-position: left;
+    /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
+    clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 80%);
+    position: relative;
+    /* this is set to relative so the children (logo-box) can have absolute position and set manually by top left right bottom params */
+    &__text-box {
+      text-align: center;
+      width: 85%;
+      position: absolute;
+      top: 38%;
+      left: 45%;
+      transform: translate(-40%, -50%);
+      text-shadow: 7px 3px 9px rgba(0, 0, 0, 0.36);
+    }
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .header {
+    margin-top: 3rem;
+    height: 80rem; /* 95% of viewport height */
+    background-image: linear-gradient(
+        to right bottom,
+        #8254d6ca,
+        rgba($primary-color, 0.8)
+      ),
+      url(../img/EwOzSllWUAc97a8.jpeg);
+    background-position: top;
+    background-size: auto;
+    /* when it's resizing within the (smaller) frame of the box, it does so that it priorities the top of the image */
+    clip-path: polygon(0% 20%, 100% 0%, 100% 60%, 0 80%);
+    position: relative;
+    /* this is set to relative so the children (logo-box) can have absolute position and set manually by top left right bottom params */
+    &__text-box {
+      text-align: center;
+      width: 85%;
+      position: absolute;
+      top: 38%;
+      left: 43%;
+      transform: translate(-40%, -50%);
+      text-shadow: 7px 3px 9px rgba(0, 0, 0, 0.36);
+    }
+  }
+}

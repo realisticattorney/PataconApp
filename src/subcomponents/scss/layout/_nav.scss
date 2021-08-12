@@ -1,3 +1,5 @@
+
+
 .nav {
   width: 90%;
   margin: 0 auto;
@@ -14,18 +16,42 @@
   }
 }
 
+.nav__logo-box {
+     filter: drop-shadow(0px 10px 5px rgba(0,0,0,.3));
+}
+
 .navlink {
   display: inline-block;
   padding: 0 4rem;
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+  font-size: 1.5em;
+  filter: drop-shadow(0px 1px 3px rgba(0,0,0,.3));
 }
 
 .navlink a {
-color: #ccc;
-text-decoration: none;
-font-size: 1.5em;
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .logo {
-  height: 3.5rem;
+  height: 5.5rem;
+  // background-color: rgba(0, 0, 0, 0.842);
+  // border-radius: 26px;
   /* WE JUST SPECIFY THE HEIGHT AS THE WIDTH WILL SET ACCORDINGLY */
+}
+@media only screen and (max-width: 752px) {
+  .nav__navbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 552px) {
+  .logo {
+    position: absolute;
+    left: -2.7rem;
+    width: 7rem;
+    height: auto;
+  }
 }

@@ -1,16 +1,19 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+// import React from "react";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { AnimatePresence } from "framer-motion";
+// import App from "../components/App";
 
-import App from "../components/App";
-
-const Main = () => {
+// const Main = () => {
 
   
-  return (
-    <Switch>
-      <Route exact path="/app" component={App}></Route>
-    </Switch>
-  );
-};
+//   return (
+//       <AnimatePresence>
+ 
+//       </AnimatePresence>
+//   );
+// };
 
-export default Main;
+// export default Main;
+
+
+

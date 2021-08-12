@@ -1,5 +1,5 @@
 import React from 'react'
-import img from  "./scss/img/logo-white.png";
+import img from  "./scss/rocket-logo.png";
 
 const Nav = () => {
   return (
@@ -9,10 +9,9 @@ const Nav = () => {
         </div>
         
         <div className="nav__navbar">
-            <li className="navlink"><a href="#">Home</a></li>
-            <li className="navlink"><a href="#">About</a></li>
-            <li className="navlink"><a href="#">Projects</a></li>
-            <li className="navlink"><a href="#">Contact</a></li>
+            <li className="navlink">App</li>
+            <li className="navlink">Projects</li>
+            <li className="navlink">Contact</li>
         </div>
         <div className="burger">
             <i className="fas fa-bars"></i>

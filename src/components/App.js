@@ -2,12 +2,10 @@ import dBank from "../abis/dBank.json";
 import React, { Component } from "react";
 import Token from "../abis/Token.json";
 import Web3 from "web3";
-import Header from "../subcomponents/Header"
 import "../subcomponents/scss/style.scss";
-
+import logo from "../subcomponents/scss/rocket-logo.png";
 
 class App extends Component {
-  
   async componentWillMount() {
     await this.loadBlockchainData(this.props.dispatch);
   }
@@ -122,22 +120,17 @@ class App extends Component {
     };
   }
 
-
-
   render() {
     return (
-      <div className="text-monospace">
-  
-        <div className="u-center-text heading-tertiary">
-          Your Metamask Address:
-          <h2>{this.state.account}</h2>
-        </div>
-        <div className="u-center-text convertionGrid">
+      <div className="app-div">
+        <div className="u-center-text">
           <div className="container">
             <div className="item item--1">
               Deposit ETHER
               <br></br>
-              Get your ETHER back + MNM tokens!
+              Get your ETHER back + <span class="menem-text">MNM</span>{" "}
+              <img src={logo} alt="" id="laconchadetumadre" />
+              tokens!
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -146,97 +139,109 @@ class App extends Component {
                   this.deposit(amount);
                 }}
               >
-                <div className="form-group mr-sm-2">
-                  <br></br>
-                  <input
-                    id="depositAmount"
-                    step="0.01"
-                    type="number"
-                    ref={(input) => {
-                      this.depositAmount = input;
-                    }}
-                    className="form-control form-control-md"
-                    placeholder="amount..."
-                    required
-                  />
+                <div class="row">
+                  <span>
+                    <input
+                      class="basic-slide"
+                      id="borrowAmount"
+                      type="number"
+                      step="0.01"
+                      placeholder="Min: 0,01"
+                      required
+                      ref={(input) => {
+                        this.depositAmount = input;
+                      }}
+                    />
+                    <label for="name">Amount</label>
+                  </span>
                 </div>
-                <button type="submit" className="btn btn--white">
-                  DEPOSIT
-                </button>
+                <div className="frame">
+                  <button
+                    type="submit"
+                    className="custom-btn btn-7 test1 variant-1 "
+                  >
+                    <span>DEPOSIT</span>
+                  </button>
+                </div>
               </form>
             </div>
             <div className="item item--2">
-              <div>
-                <br></br>
-              </div>
+              Withdraw ETHER
+              <br></br>+<span class="menem-text">MNM</span>{" "}
+              <img src={logo} alt="" id="laconchadetumadre" />
+              tokens!
               <br></br>
-              Do you want to withdraw + take interest?
-              <br></br>
-              <br></br>
-              <div>
+              <div class="frame">
                 <button
                   type="submit"
-                  className="btn btn--white"
+                  className="custom-btn btn-7 test1 variant-1 "
                   onClick={(e) => this.withdraw(e)}
                 >
-                  WITHDRAW
+                  <span>WITHDRAW</span>
                 </button>
               </div>
             </div>
             <div className="item item--3">
-              <div>
-                Do you want to borrow tokens?
-                <br></br>
-                (You'll get 50% of collateral, in Tokens)
-                <br></br>
-                Type collateral amount (in ETH)
-                <br></br>
-                <br></br>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    let amount = this.borrowAmount.value;
-                    amount = amount * 10 ** 18; //convert to wei
-                    this.borrow(amount);
-                  }}
-                >
-                  <div className="form-group mr-sm-2">
+              Borrow Tokens
+              <br></br>
+              You'll get up to 50% of collateral
+              <br></br>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  let amount = this.borrowAmount.value;
+                  amount = amount * 10 ** 18; //convert to wei
+                  this.borrow(amount);
+                }}
+              >
+                <div class="row">
+                  <span>
                     <input
+                      class="basic-slide"
                       id="borrowAmount"
-                      step="0.01"
                       type="number"
+                      step="0.01"
+                      placeholder="Min: 0,01"
+                      required
                       ref={(input) => {
                         this.borrowAmount = input;
                       }}
-                      className="form-control form-control-md"
-                      placeholder="amount..."
-                      required
                     />
-                  </div>
-                  <button type="submit" className="btn btn--white">
-                    BORROW
+                    <label for="name">Amount</label>
+                  </span>
+                </div>
+                <div className="frame">
+                  <button
+                    type="submit"
+                    class="custom-btn btn-7 test1 variant-1 "
+                  >
+                    <span>BORROW</span>
                   </button>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
             <div className="item item--4">
               <div>
+                Lend ETHER
                 <br></br>
-                Do you want to payoff the loan?
+                Receive collateral fees
                 <br></br>
-                (You'll receive your collateral - fee)
-                <br></br>
-                <br></br>
-                <button
-                  type="submit"
-                  className="btn btn--white"
-                  onClick={(e) => this.payOff(e)}
-                >
-                  PAYOFF
-                </button>
+                <div className="frame">
+                  <button
+                    type="submit"
+                    className="custom-btn btn-7 test1 variant-1 "
+                    onClick={(e) => this.payOff(e)}
+                  >
+                    <span>PAY OFF</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className="u-center-text heading-tertiary">
+          Your Metamask Address:
+          <h2>{this.state.account}</h2>
         </div>
       </div>
     );

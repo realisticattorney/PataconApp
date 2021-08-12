@@ -13,46 +13,594 @@
 @import "layout/main";
 @import "pages/home";
 
-// @media only screen and (max-width: 500px) {
+.switch-wrapper {
+  position: relative;
+}
 
-//   html{
-//     font-size: 41.8%;
-//   }
-// }
+.switch-wrapper > div {
+  position: absolute;
+}
+
 .container {
-  width: 100%;
-  height: 70vh;
+  width: 52vw;
+  height: 77.5vh;
   justify-content: center;
-  margin: 3rem auto;
+  align-content: center;
+  margin: 0rem auto;
   display: grid;
-  grid-template-rows: 20rem 20rem;
-  grid-template-columns: 1fr 35vw 35vw 1.1fr;
-  gap: 2rem 3vw;
+  grid-template-rows: 40vh 35vh;
+  grid-template-columns: 25vw 25vw;
+  gap: 0.5vh 0.5vw;
+  place-items: center;
+  background: linear-gradient(#161522, #161522) padding-box,
+    /*this is your grey background*/
+      linear-gradient(12deg, #1fd1f9 0%, #b621fe 74%) border-box;
+  // color: #313149;
+  border: 4px solid transparent;
+
+  border-radius: 20px;
+  box-shadow: 
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
 }
 .item {
+  justify-self: center;
+  align-self: center;
+
+  width: 25vw;
   margin: 0 auto;
-  padding-top: 10rem;
-  font-size: 2rem;
+  padding: 2rem;
+  padding-top: 4vh;
+  background: #202231;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 2px rgba(19, 74, 70, 0.4);
   font-family: sans-serif;
   color: white;
-  border-radius: 100px;
+  border-radius: 1.5rem;
+  background: linear-gradient(to bottom, #422c66, #1d134a);
 
   &--1 {
-    grid-column-start: 2;
+    height: 40vh;
+    background: linear-gradient(213deg, #0e91fde5 24%, #053491 104%);
+    grid-column-start: 1;
     grid-row-start: 1;
   }
   &--2 {
-    grid-column-start: 2;
+    height: 34vh;
+    padding-top: 8vh;
+    grid-column-start: 1;
     grid-row-start: 2;
   }
   &--3 {
-    grid-column-start: 3;
+    height: 40vh;
+    padding-top: 8vh;
+    grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   &--4 {
-    grid-column-start: 3;
+    height: 34vh;
+    padding-top: 8vh;
+    grid-column-start: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+  }
+}
+
+.app-div {
+  margin-top: 5rem;
+}
+
+@mixin epic-sides() {
+  // https://codepen.io/MichaelArestad/pen/qltuk
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    // position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    // height: 100%;
+    // width: 1500px;
+    z-index: -1;
+    @content;
+  }
+}
+.row {
+  max-width: 35vh;
+  margin: 0 auto;
+  padding: 2px 30px;
+  @include epic-sides() {
+    background: inherit;
+  }
+  text-align: center;
+
+  &:first-child {
+    padding: 4px 3px;
+  }
+  &:nth-child(2) {
+    background: #134a46;
+  }
+  .basic-slide {
+    display: inline-block;
+    margin-left: 85px;
+    width: 100px;
+    padding: 10px 3px 8px 0px;
+    font-family: "Open Sans", sans;
+    font-weight: 400;
+    color: #2a3a50;
+    background: #eeeeee;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    // text-indent: 80px; // Arbitrary.
+    transition: all 0.3s ease-in-out;
+
+    &::-webkit-input-placeholder {
+      color: #efefef;
+      text-indent: 1;
+      font-weight: 300;
+    }
+
+    + label {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 10%;
+      padding: 2px 15px;
+      text-shadow: 0 2px 2px rgba(19, 74, 70, 0.4);
+      background: #2a3a50;
+      transition: all 0.3s ease-in-out;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    margin: 3px 0px;
+  }
+}
+.basic-slide:focus,
+.basic-slide:active {
+  color: #000000;
+  text-indent: 32%;
+  background: rgb(235, 235, 235);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  &::-webkit-input-placeholder {
+    color: #aaa;
+    left: 5px;
+  }
+  + label {
+    transform: translateX(-20%);
+  }
+}
+#laconchadetumadre {
+  width: 2.3rem;
+  // background-color: #1fd1f9;
+  // background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+}
+
+@media only screen and (max-width: 952px) {
+  .container {
+    width: 75.5vw;
+    height: 73vh;
+    justify-content: center;
+    align-content: center;
+    margin: 0rem auto;
+    display: grid;
+    grid-template-rows: 40vh 30vh;
+    grid-template-columns: 36.5vw 36.5vw;
+    gap: 1vh 0.5vw;
+    place-items: center;
+    background: linear-gradient(#161522, #161522) padding-box,
+      /*this is your grey background*/
+        linear-gradient(12deg, #1fd1f9 0%, #b621fe 74%) border-box;
+    // color: #313149;
+    border: 4px solid transparent;
+
+  }
+  .item {
+    justify-self: center;
+    align-self: center;
+    width: 36vw;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 4vh;
+    font-size: 1.8rem;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 1.5rem;
+
+    &--1 {
+      height: 40vh;
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+    &--2 {
+      height: 30vh;
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+    &--3 {
+      padding-top: 7.8vh;
+      height: 40vh;
+      grid-column-start: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    &--4 {
+      height: 30vh;
+      grid-column-start: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+
+  .app-div {
+    margin-top: 5rem;
+  }
+
+  .row {
+    max-width: 35vh;
+    margin: 0 auto;
+    padding: 2px 30px;
+    // background: #44d3e9;
+    @include epic-sides() {
+      background: inherit;
+    }
+    text-align: center;
+
+    &:first-child {
+      padding: 4px 3px;
+    }
+    &:nth-child(2) {
+      background: #134a46;
+    }
+    .basic-slide {
+      display: inline-block;
+      margin-left: 85px;
+      width: 80px;
+      padding: 10px 3px 8px 0px;
+      font-family: "Open Sans", sans;
+      font-weight: 400;
+      color: #2a3a50;
+      background: #eeeeee;
+      border: 0;
+      border-radius: 3px;
+      outline: 0;
+      // text-indent: 80px; // Arbitrary.
+      transition: all 0.3s ease-in-out;
+
+      &::-webkit-input-placeholder {
+        color: #efefef;
+        text-indent: 1;
+        font-weight: 300;
+      }
+
+      + label {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        padding: 2px 15px;
+        background: #2a3a50;
+        transition: all 0.3s ease-in-out;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      margin: 3px 0px;
+    }
+  }
+  .basic-slide:focus,
+  .basic-slide:active {
+    color: #000000;
+    text-indent: 12%;
+    background: rgb(235, 235, 235);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::-webkit-input-placeholder {
+      color: #aaa;
+      left: 5px;
+    }
+    + label {
+      transform: translateX(-15%);
+    }
+  }
+  #laconchadetumadre {
+    width: 2.3rem;
+    // background-color: #1fd1f9;
+    // background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  }
+}
+
+@media only screen and (max-width: 752px) {
+  .container {
+    width: 75.5vw;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+    margin: 0rem auto;
+    display: grid;
+    grid-template-rows: 35vh 30vh;
+    grid-template-columns: 36.5vw 36.5vw;
+    gap: 0.8vh 0.5vw;
+    place-items: center;
+    background: linear-gradient(#161522, #161522) padding-box,
+      /*this is your grey background*/
+        linear-gradient(12deg, #1fd1f9 0%, #b621fe 74%) border-box;
+    // color: #313149;
+    border: 4px solid transparent;
+    border-radius: 20px;
+
+  }
+  .item {
+    justify-self: center;
+    align-self: center;
+    width: 36vw;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 4vh;
+    font-size: 1.8rem;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 1.5rem;
+
+    &--1 {
+      height: 34.7vh;
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+    &--2 {
+      padding-top: 7vh;
+      height: 30vh;
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+    &--3 {
+      padding-top: 7.8vh;
+      height: 34.7vh;
+      grid-column-start: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    &--4 {
+      padding-top: 7vh;
+      height: 30vh;
+      grid-column-start: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+
+  .app-div {
+    margin-top: 5rem;
+  }
+
+  .row {
+    max-width: 35vh;
+    margin: 0 auto;
+    padding: 2px 30px;
+    // background: #44d3e9;
+    @include epic-sides() {
+      background: inherit;
+    }
+    text-align: center;
+
+    &:first-child {
+      padding: 4px 3px;
+    }
+    &:nth-child(2) {
+      background: #134a46;
+    }
+    .basic-slide {
+      display: inline-block;
+      margin-left: 85px;
+      width: 80px;
+      padding: 10px 3px 3px 0px;
+      font-family: "Open Sans", sans;
+      font-weight: 400;
+      color: #2a3a50;
+      background: #eeeeee;
+      border: 0;
+      border-radius: 3px;
+      outline: 0;
+      // text-indent: 80px; // Arbitrary.
+      transition: all 0.3s ease-in-out;
+
+      &::-webkit-input-placeholder {
+        color: #efefef;
+        text-indent: 1;
+        font-weight: 300;
+      }
+
+      + label {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        padding: 2px 15px;
+        background: #2a3a50;
+        transition: all 0.3s ease-in-out;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      margin: 3px 0px;
+    }
+  }
+  .basic-slide:focus,
+  .basic-slide:active {
+    color: #000000;
+    text-indent: 12%;
+    background: rgb(235, 235, 235);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::-webkit-input-placeholder {
+      color: #aaa;
+      left: 5px;
+    }
+    + label {
+      transform: translateX(-15%);
+    }
+  }
+  #laconchadetumadre {
+    width: 2.3rem;
+    // background-color: #1fd1f9;
+    // background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  }
+}
+
+@media only screen and (max-width: 552px) {
+  .container {
+    width: 80%;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+    margin: 0rem auto;
+    display: grid;
+    grid-template-rows: 24rem 15rem 24rem 15rem;
+    grid-template-columns: auto;
+    gap: 0.7vh;
+    place-items: center;
+    background: linear-gradient(#161522, #161522) padding-box,
+      /*this is your grey background*/
+        linear-gradient(12deg, #1fd1f9 0%, #b621fe 74%) border-box;
+    // color: #313149;
+    border: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-radius: 26px;
+
+  }
+  .item {
+    justify-self: center;
+    // align-self: center;
+    width: 100%;
+    // margin: 0 auto;
+    padding: 1rem;
+    padding-top: 1.6rem;
+    font-size: 1.8rem;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 1.9rem;
+
+    &--1 {
+      background: linear-gradient(213deg, #0e91fde8 24%, #053491 104%);
+      height: 24rem;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    &--2 {
+      height: 15rem;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    &--3 {
+      height: 24rem;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    &--4 {
+      height: 15rem;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+  }
+
+  .app-div {
+    margin-top: 5rem;
+  }
+
+  .row {
+    max-width: 35vh;
+    margin: 0 auto;
+    padding: 2px 30px;
+    @include epic-sides() {
+      background: inherit;
+    }
+    text-align: center;
+
+    &:first-child {
+      padding: 4px 3px;
+    }
+
+    .basic-slide {
+      display: inline-block;
+      margin-left: 85px;
+      width: 80px;
+      padding: 10px 3px 3px 0px;
+      font-family: "Open Sans", sans;
+      font-weight: 400;
+      color: #2a3a50;
+      background: #eeeeee;
+      border: 0;
+      border-radius: 3px;
+      outline: 0;
+      // text-indent: 80px; // Arbitrary.
+      transition: all 0.3s ease-in-out;
+
+      &::-webkit-input-placeholder {
+        color: #efefef;
+        text-indent: 1;
+        font-weight: 300;
+      }
+
+      + label {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        padding: 2px 15px;
+        background: #2a3a50;
+        transition: all 0.3s ease-in-out;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      margin: 3px 0px;
+    }
+  }
+  .basic-slide:focus,
+  .basic-slide:active {
+    color: #000000;
+    text-indent: 12%;
+    background: rgb(235, 235, 235);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::-webkit-input-placeholder {
+      color: #aaa;
+      left: 5px;
+    }
+    + label {
+      transform: translateX(-15%);
+    }
+  }
+  #laconchadetumadre {
+    width: 2.3rem;
+    // background-color: #1fd1f9;
+    // background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
   }
 }
